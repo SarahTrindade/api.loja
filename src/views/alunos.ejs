@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Alunos</title>
+</head>
+<body>
+    <h1>📚 Lista de Alunos</h1>
+
+    <% if (alunos.length === 0) { %>
+  
+      <p>😢 Nenhum aluno cadastrado ainda.</p>
+      <a href="/cadastro">Cadastrar primeiro aluno</a>
+  
+    <% } else { %>
+  
+      <p>Total: <%= alunos.length %> aluno(s)</p>
+      <ul>
+        <% alunos.forEach((a) => { %>
+          <li>
+            <%= a.nome %> — <%= a.turma %>
+            <% if (a.nota >= 7) { %>
+              <span style="color:green">✅ Aprovado</span>
+            <% } else { %>
+              <span style="color:red">❌ Recuperação</span>
+            <% } %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  
+  </table>
+</body>
+</html>
